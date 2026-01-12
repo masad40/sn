@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - TerrorRat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0a0a0f;
+            --deep-gray: #15151e;
+            --neon-green: #00ff9d;
+            --neon-cyan: #00eeff;
+            --text-light: #e0e0ff;
+            --text-gray: #a0a0c0;
+            --cyber-font: 'Orbitron', sans-serif;
+            --mono-font: 'Space Mono', monospace;
+        }
+
+        body {
+            font-family: var(--mono-font);
+            background-color: var(--primary-black);
+            color: var(--text-light);
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            background-color: var(--deep-gray);
+            border: 2px solid var(--neon-green);
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.2);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .login-header h1 {
+            font-family: var(--cyber-font);
+            font-size: 2rem;
+            color: var(--neon-green);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .login-header p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 65%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--neon-cyan);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .password-toggle:hover {
+            color: var(--neon-green);
+        }
+
+        .form-group.password-field {
+            position: relative;
+        }
+
+        .form-group.password-field .form-input {
+            padding-right: 45px;
+        }
+
+        .form-label {
+            display: block;
+            color: var(--neon-cyan);
+            font-family: var(--cyber-font);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(10, 10, 15, 0.7);
+            border: 2px solid var(--neon-green);
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: var(--mono-font);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 238, 255, 0.3);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: transparent;
+            color: var(--neon-green);
+            border: 2px solid var(--neon-green);
+            font-family: var(--cyber-font);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .login-btn:hover {
+            background-color: var(--neon-green);
+            color: var(--primary-black);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+        }
+
+        .error-message {
+            color: #ff0040;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .lockout-message {
+            background-color: rgba(255, 0, 64, 0.1);
+            color: #ff0040;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            border-left: 3px solid #ff0040;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>> ADMIN</h1>
+            <p>TerrorRat Control Panel</p>
+        </div>
+
+        <div class="lockout-message" id="lockout-message"></div>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" class="form-input" placeholder="Enter username" required>
+            </div>
+
+            <div class="form-group password-field">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-input" placeholder="Enter password" required>
+                <span class="password-toggle" id="password-toggle">
+                    <i class="fas fa-eye"></i>
+                </span>
+            </div>
+
+            <button type="submit" class="login-btn">Login to Admin Panel</button>
+            
+            <div id="error-message" class="error-message"></div>
+        </form>
+    </div>
+
+    <script>
+        // Security: Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Security: Disable keyboard shortcuts for dev tools and view source
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+                (e.ctrlKey && e.key === 'u') ||
+                (e.ctrlKey && e.key === 's')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Security: Disable drag and drop
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Simple hash function for client-side password storage (NOT for production)
+        function simpleHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return Math.abs(hash).toString(16);
+        }
+
+        // Security: Initialize with hashed password and rate limiting
+        const MAX_ATTEMPTS = 5;
+        const LOCKOUT_TIME = 15 * 60 * 1000; // 15 minutes
+
+        function initializeAdminPanel() {
+            // Reset all previous data
+            localStorage.removeItem('admin_username');
+            localStorage.removeItem('admin_password_hash');
+            localStorage.removeItem('admin_initialized');
+            localStorage.removeItem('admin_logged_in');
+            localStorage.removeItem('admin_session_token');
+            
+            // Set new credentials
+            localStorage.setItem('admin_username', 'admin');
+            // Store hashed password instead of plain text
+            const defaultPwd = 'secure123';
+            localStorage.setItem('admin_password_hash', simpleHash(defaultPwd));
+            localStorage.setItem('admin_initialized', 'true');
+        }
+
+        function getLoginAttempts() {
+            const data = JSON.parse(sessionStorage.getItem('login_attempts') || '{"count":0,"timestamp":0}');
+            return data;
+        }
+
+        function setLoginAttempts(count) {
+            sessionStorage.setItem('login_attempts', JSON.stringify({
+                count: count,
+                timestamp: Date.now()
+            }));
+        }
+
+        function isAccountLocked() {
+            const attempts = getLoginAttempts();
+            if (attempts.count >= MAX_ATTEMPTS) {
+                const timePassed = Date.now() - attempts.timestamp;
+                if (timePassed < LOCKOUT_TIME) {
+                    return true;
+                } else {
+                    setLoginAttempts(0);
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        function getRemainingLockoutTime() {
+            const attempts = getLoginAttempts();
+            const timePassed = Date.now() - attempts.timestamp;
+            const remaining = LOCKOUT_TIME - timePassed;
+            return Math.ceil(remaining / 1000);
+        }
+
+        initializeAdminPanel();
+
+        const loginForm = document.getElementById('login-form');
+        const lockoutMsg = document.getElementById('lockout-message');
+        const passwordInput = document.getElementById('password');
+        const passwordToggle = document.getElementById('password-toggle');
+
+        // Password visibility toggle
+        passwordToggle.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordToggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            } else {
+                passwordInput.type = 'password';
+                passwordToggle.innerHTML = '<i class="fas fa-eye"></i>';
+            }
+        });
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Check if account is locked
+            if (isAccountLocked()) {
+                const remainingTime = getRemainingLockoutTime();
+                const minutes = Math.floor(remainingTime / 60);
+                const seconds = remainingTime % 60;
+                lockoutMsg.textContent = `Account locked due to too many failed attempts. Try again in ${minutes}m ${seconds}s.`;
+                lockoutMsg.style.display = 'block';
+                return;
+            }
+
+            lockoutMsg.style.display = 'none';
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+            const storedUsername = localStorage.getItem('admin_username');
+            const storedPasswordHash = localStorage.getItem('admin_password_hash');
+
+            // Validate inputs
+            if (!username || !password) {
+                const errorMsg = document.getElementById('error-message');
+                errorMsg.textContent = 'Username and password are required.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Compare username and hashed password
+            const passwordHash = simpleHash(password);
+            if (username === storedUsername && passwordHash === storedPasswordHash) {
+                // Successful login
+                setLoginAttempts(0);
+                localStorage.setItem('admin_logged_in', 'true');
+                localStorage.setItem('admin_session_token', simpleHash(username + Date.now()));
+                window.location.href = 'admin-dashboard.html';
+            } else {
+                // Failed login - increment attempts
+                const attempts = getLoginAttempts();
+                const newCount = attempts.count + 1;
+                setLoginAttempts(newCount);
+
+                const errorMsg = document.getElementById('error-message');
+                const attemptsLeft = MAX_ATTEMPTS - newCount;
+
+                if (attemptsLeft > 0) {
+                    errorMsg.textContent = `Invalid credentials. ${attemptsLeft} attempt(s) remaining.`;
+                } else {
+                    errorMsg.textContent = 'Too many failed attempts. Account locked for 15 minutes.';
+                    lockoutMsg.textContent = 'Account locked due to too many failed attempts. Try again in 15 minutes.';
+                    lockoutMsg.style.display = 'block';
+                }
+
+                errorMsg.style.display = 'block';
+                document.getElementById('password').value = '';
+            }
+        });
+    </script>
+</body>
+</html>
