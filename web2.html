@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+       <link rel="icon" type="image/png" href="https://i.ibb.co.com/1G9cstz0/392089-PCH6-VI-336.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TerrorRat | Elite Cybersecurity Specialist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        (function(){
+        (function () {
             emailjs.init('5E0g2Ijfl0Uz4DmqU');
         })();
     </script>
@@ -47,7 +51,12 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--cyber-font);
             font-weight: 700;
             letter-spacing: 1px;
@@ -155,7 +164,7 @@
             width: 48px;
             background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
             border-radius: 4px;
-            transition: transform 320ms cubic-bezier(.2,.9,.2,1), width 320ms cubic-bezier(.2,.9,.2,1);
+            transition: transform 320ms cubic-bezier(.2, .9, .2, 1), width 320ms cubic-bezier(.2, .9, .2, 1);
             transform: translateX(0);
             z-index: 1200;
         }
@@ -178,10 +187,10 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-       
-       
+
+
         }
-        
+
 
 
 
@@ -194,7 +203,7 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle at 30% 30%, rgba(0, 255, 157, 0.075) 0%, transparent 60%),
-                        radial-gradient(circle at 70% 70%, rgba(0, 238, 255, 0.05) 0%, transparent 60%);
+                radial-gradient(circle at 70% 70%, rgba(0, 238, 255, 0.05) 0%, transparent 60%);
             z-index: -2;
         }
 
@@ -399,13 +408,15 @@
             display: block;
         }
 
-        .tools-grid, .courses-grid {
+        .tools-grid,
+        .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .tool-card, .course-card {
+        .tool-card,
+        .course-card {
             background-color: var(--card-gray);
             border-radius: 8px;
             padding: 30px;
@@ -415,25 +426,29 @@
             overflow: hidden;
         }
 
-        .tool-card:hover, .course-card:hover {
+        .tool-card:hover,
+        .course-card:hover {
             border-color: var(--neon-purple);
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(157, 78, 221, 0.2);
         }
 
-        .tool-icon, .course-icon {
+        .tool-icon,
+        .course-icon {
             font-size: 2.5rem;
             color: var(--neon-purple);
             margin-bottom: 20px;
         }
 
-        .tool-card h3, .course-card h3 {
+        .tool-card h3,
+        .course-card h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
             color: var(--text-light);
         }
 
-        .tool-card p, .course-card p {
+        .tool-card p,
+        .course-card p {
             color: var(--text-gray);
             margin-bottom: 20px;
         }
@@ -487,13 +502,23 @@
         }
 
         .btn-pop {
-            animation: popIn 420ms cubic-bezier(.2,.9,.2,1);
+            animation: popIn 420ms cubic-bezier(.2, .9, .2, 1);
         }
 
         @keyframes popIn {
-            0% { transform: scale(0.85) translateY(6px); opacity: 0; }
-            60% { transform: scale(1.06); opacity: 1; }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(0.85) translateY(6px);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.06);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         /* Services: improved animations and glow */
@@ -505,23 +530,37 @@
         }
 
         .service-animate .card-in {
-            animation: floatIn 560ms cubic-bezier(.2,.9,.2,1) forwards;
+            animation: floatIn 560ms cubic-bezier(.2, .9, .2, 1) forwards;
         }
 
         @keyframes floatIn {
-            0% { opacity: 0; transform: translateY(18px) scale(0.995); filter: blur(6px); }
-            60% { opacity: 1; transform: translateY(-6px) scale(1.02); filter: blur(0); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
+            0% {
+                opacity: 0;
+                transform: translateY(18px) scale(0.995);
+                filter: blur(6px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateY(-6px) scale(1.02);
+                filter: blur(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         /* Subtle animated gradient border for active service cards */
-        .tool-card::before, .course-card::before {
+        .tool-card::before,
+        .course-card::before {
             content: "";
             position: absolute;
             inset: 0;
             border-radius: 8px;
             padding: 1px;
-            background: linear-gradient(90deg, rgba(157,78,221,0.06), rgba(0,238,255,0.04));
+            background: linear-gradient(90deg, rgba(157, 78, 221, 0.06), rgba(0, 238, 255, 0.04));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             pointer-events: none;
@@ -529,12 +568,21 @@
             transition: opacity 420ms ease;
         }
 
-        .tool-card:hover::before, .course-card:hover::before,
-        .card-in { opacity: 1; }
+        .tool-card:hover::before,
+        .course-card:hover::before,
+        .card-in {
+            opacity: 1;
+        }
 
         /* Tab button subtle motion */
-        .tab-btn { transform-origin: center; }
-        .tab-btn.active { transform: translateY(-4px) scale(1.02); transition: transform 220ms ease; }
+        .tab-btn {
+            transform-origin: center;
+        }
+
+        .tab-btn.active {
+            transform: translateY(-4px) scale(1.02);
+            transition: transform 220ms ease;
+        }
 
         /* Contact Section */
         .contact-section {
@@ -661,7 +709,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            background: rgba(255,255,255,0.02);
+            background: rgba(255, 255, 255, 0.02);
             transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
             position: relative;
             text-decoration: none;
@@ -671,7 +719,7 @@
             color: var(--neon-cyan);
             transform: translateY(-6px) scale(1.05);
             background: rgba(0, 238, 255, 0.06);
-            box-shadow: 0 6px 18px rgba(0,238,255,0.06);
+            box-shadow: 0 6px 18px rgba(0, 238, 255, 0.06);
         }
 
         .social-icon::after {
@@ -680,7 +728,7 @@
             bottom: -30px;
             left: 50%;
             transform: translateX(-50%) scale(0.95);
-            background: rgba(10,10,15,0.95);
+            background: rgba(10, 10, 15, 0.95);
             color: var(--text-light);
             padding: 6px 8px;
             border-radius: 6px;
@@ -689,7 +737,7 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.18s ease, transform 0.18s ease;
-            border: 1px solid rgba(0,255,157,0.06);
+            border: 1px solid rgba(0, 255, 157, 0.06);
         }
 
         .social-icon:hover::after {
@@ -722,13 +770,26 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
         }
 
         /* Responsive Design */
@@ -736,12 +797,12 @@
             .hero-title {
                 font-size: 2.8rem;
             }
-            
+
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
+
             .photo-gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -792,20 +853,21 @@
             .hero-title {
                 font-size: 1.8rem;
             }
-            
+
             .photo-gallery {
                 grid-template-columns: 1fr;
             }
-            
-            .tools-grid, .courses-grid {
+
+            .tools-grid,
+            .courses-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .services-tabs {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .tab-btn {
                 width: 100%;
                 text-align: center;
@@ -813,6 +875,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -835,7 +898,7 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-                <div id="nav-indicator" aria-hidden="true"></div>
+            <div id="nav-indicator" aria-hidden="true"></div>
         </div>
     </nav>
 
@@ -845,7 +908,8 @@
         <div class="container hero-content">
             <h1 class="hero-title">Ethical Hacker | Cybersecurity Specialist | Digital Defense Expert</h1>
             <p class="hero-subtitle">
-                Securing digital frontiers through advanced threat intelligence, penetration testing, and defensive countermeasures. 
+                Securing digital frontiers through advanced threat intelligence, penetration testing, and defensive
+                countermeasures.
                 My mission is to fortify systems before adversaries can exploit them.
                 <span class="terminal-cursor"></span>
             </p>
@@ -859,10 +923,18 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Me</h2>
-                    <p>I am <strong>Sanim Ehsan</strong>, a professional Cybersecurity Specialist and AI Engineer. For the past <strong>4+ years</strong> I have worked in ethical hacking, vulnerability assessment, and secure system architecture.</p>
-                    <p>My approach focuses on offensive security — understanding attacker methodologies to build resilient, practical defenses. I provide clear reporting and fast, actionable remediation to reduce risk effectively.</p>
-                    <p>Core skills: <span class="highlight">penetration testing</span>, <span class="highlight">digital forensics</span>, <span class="highlight">threat intelligence</span>, <span class="highlight">secure code auditing</span>, and <span class="highlight">AI-powered threat detection</span>.</p>
-                    <p class="highlight">Serious projects, consulting, or training — contact details available on request.</p>
+                    <p>I am <strong>Sanim Ehsan</strong>, a professional Cybersecurity Specialist and AI Engineer. For
+                        the past <strong>4+ years</strong> I have worked in ethical hacking, vulnerability assessment,
+                        and secure system architecture.</p>
+                    <p>My approach focuses on offensive security — understanding attacker methodologies to build
+                        resilient, practical defenses. I provide clear reporting and fast, actionable remediation to
+                        reduce risk effectively.</p>
+                    <p>Core skills: <span class="highlight">penetration testing</span>, <span class="highlight">digital
+                            forensics</span>, <span class="highlight">threat intelligence</span>, <span
+                            class="highlight">secure code auditing</span>, and <span class="highlight">AI-powered threat
+                            detection</span>.</p>
+                    <p class="highlight">Serious projects, consulting, or training — contact details available on
+                        request.</p>
                 </div>
                 <div class="photo-gallery" id="photo-gallery">
                     <div class="photo-card">
@@ -901,12 +973,12 @@
                 <h2>Specialized Services</h2>
                 <p>Advanced cybersecurity solutions tailored to your organization's needs</p>
             </div>
-            
+
             <div class="services-tabs">
                 <button class="tab-btn active" data-tab="tools">Tools & Utilities</button>
                 <button class="tab-btn" data-tab="courses">Training & Courses</button>
             </div>
-            
+
             <div id="tools" class="tab-content active">
                 <div class="tools-grid" id="tools-grid">
                     <div class="tool-card">
@@ -914,35 +986,39 @@
                             <i class="fas fa-search"></i>
                         </div>
                         <h3>VulnScan Pro</h3>
-                        <p>Advanced vulnerability scanner with AI-driven threat detection and zero-day exploit identification.</p>
+                        <p>Advanced vulnerability scanner with AI-driven threat detection and zero-day exploit
+                            identification.</p>
                     </div>
-                    
+
                     <div class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-network-wired"></i>
                         </div>
                         <h3>NetShield Suite</h3>
-                        <p>Comprehensive network security toolkit for intrusion detection, traffic analysis, and firewall auditing.</p>
+                        <p>Comprehensive network security toolkit for intrusion detection, traffic analysis, and
+                            firewall auditing.</p>
                     </div>
-                    
+
                     <div class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-code"></i>
                         </div>
                         <h3>SecureCode Auditor</h3>
-                        <p>Static and dynamic code analysis tool for identifying security flaws in applications and APIs.</p>
+                        <p>Static and dynamic code analysis tool for identifying security flaws in applications and
+                            APIs.</p>
                     </div>
-                    
+
                     <div class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-user-secret"></i>
                         </div>
                         <h3>PhishGuard Sentinel</h3>
-                        <p>Advanced phishing simulation and employee training platform with real-time threat intelligence.</p>
+                        <p>Advanced phishing simulation and employee training platform with real-time threat
+                            intelligence.</p>
                     </div>
                 </div>
             </div>
-            
+
             <div id="courses" class="tab-content">
                 <div class="courses-grid" id="courses-grid">
                     <div class="course-card">
@@ -951,37 +1027,41 @@
                         </div>
                         <span class="course-level">Beginner</span>
                         <h3>Cybersecurity Fundamentals</h3>
-                        <p>Foundational course covering security principles, threat landscapes, and basic defense mechanisms.</p>
+                        <p>Foundational course covering security principles, threat landscapes, and basic defense
+                            mechanisms.</p>
                         <a href="#" class="course-btn">Enroll Now</a>
                     </div>
-                    
+
                     <div class="course-card">
                         <div class="course-icon">
                             <i class="fas fa-skull-crossbones"></i>
                         </div>
                         <span class="course-level">Advanced</span>
                         <h3>Penetration Testing Masterclass</h3>
-                        <p>Hands-on ethical hacking course covering reconnaissance, exploitation, and post-exploitation techniques.</p>
+                        <p>Hands-on ethical hacking course covering reconnaissance, exploitation, and post-exploitation
+                            techniques.</p>
                         <a href="#" class="course-btn">Learn More</a>
                     </div>
-                    
+
                     <div class="course-card">
                         <div class="course-icon">
                             <i class="fas fa-robot"></i>
                         </div>
                         <span class="course-level">Pro</span>
                         <h3>AI-Powered Threat Hunting</h3>
-                        <p>Advanced course on leveraging machine learning for proactive threat detection and incident response.</p>
+                        <p>Advanced course on leveraging machine learning for proactive threat detection and incident
+                            response.</p>
                         <a href="#" class="course-btn">Enroll Now</a>
                     </div>
-                    
+
                     <div class="course-card">
                         <div class="course-icon">
                             <i class="fas fa-balance-scale"></i>
                         </div>
                         <span class="course-level">Advanced</span>
                         <h3>Digital Forensics & Incident Response</h3>
-                        <p>Master the art of investigating security breaches, collecting evidence, and mitigating future attacks.</p>
+                        <p>Master the art of investigating security breaches, collecting evidence, and mitigating future
+                            attacks.</p>
                         <a href="#" class="course-btn">Learn More</a>
                     </div>
                 </div>
@@ -996,33 +1076,33 @@
                 <h2>Secure Contact</h2>
                 <p>Encrypted end-to-end communication for confidential inquiries</p>
             </div>
-            
+
             <form id="contact-form" class="contact-form">
                 <div class="form-group">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" id="name" class="form-input" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" id="email" class="form-input" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="subject" class="form-label">Subject</label>
                     <input type="text" id="subject" class="form-input" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="message" class="form-label">Message</label>
                     <textarea id="message" class="form-input" required></textarea>
                 </div>
-                
+
                 <button type="submit" class="submit-btn">Send Secure Message</button>
-                
+
                 <div id="form-message" class="form-message"></div>
             </form>
-            
+
             <div id="social-links" class="social-icons">
                 <!-- Social links populated from admin via localStorage -->
             </div>
@@ -1039,14 +1119,14 @@
 
     <script>
         // Disable right-click context menu
-        document.addEventListener('contextmenu', function(e) {
+        document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
             alert('Right-click is disabled for security reasons.');
             return false;
         });
 
         // Disable keyboard shortcuts for dev tools and view source
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             // F12 - Developer Tools
             if (e.key === 'F12') {
                 e.preventDefault();
@@ -1080,7 +1160,7 @@
         });
 
         // Disable drag and drop
-        document.addEventListener('dragstart', function(e) {
+        document.addEventListener('dragstart', function (e) {
             e.preventDefault();
             return false;
         });
@@ -1092,14 +1172,14 @@
         // Mobile Navigation Toggle
         const mobileToggle = document.getElementById('mobile-toggle');
         const navMenu = document.getElementById('nav-menu');
-        
+
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            mobileToggle.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
+            mobileToggle.innerHTML = navMenu.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
                 : '<i class="fas fa-bars"></i>';
         });
-        
+
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
@@ -1109,7 +1189,7 @@
         });
 
         // Nav indicator: slide under active nav item on click/scroll/resize
-        (function() {
+        (function () {
             const navLinks = document.querySelectorAll('.nav-link');
             const navIndicator = document.getElementById('nav-indicator');
             if (!navIndicator || !navLinks.length) return;
@@ -1124,7 +1204,7 @@
 
             // determine active section by scroll position
             function setActiveByScroll() {
-                const sections = ['home','about','services','contact'];
+                const sections = ['home', 'about', 'services', 'contact'];
                 let current = sections[0];
                 for (let id of sections) {
                     const el = document.getElementById(id);
@@ -1159,19 +1239,19 @@
                 });
             });
         })();
-        
+
         // Tab Switching for Services
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
-        
+
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const tabId = btn.getAttribute('data-tab');
-                
+
                 // Update active tab button
                 tabBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
+
                 // Show active tab content
                 tabContents.forEach(content => {
                     content.classList.remove('active');
@@ -1180,7 +1260,7 @@
                     }
                 });
                 // animate cards inside the now-active tab
-                try { animateServiceCards(tabId); } catch (e) {}
+                try { animateServiceCards(tabId); } catch (e) { }
             });
         });
 
@@ -1209,7 +1289,7 @@
                 cards.forEach(c => c.style.animationDelay = '');
             }, total);
         }
-        
+
         // Matrix Background Animation
         const canvas = document.getElementById('matrix-bg');
         const ctx = canvas.getContext('2d');
@@ -1234,45 +1314,45 @@
 
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
-        
+
         function drawMatrix() {
             // Semi-transparent black background for trailing effect
             ctx.fillStyle = "rgba(10, 10, 15, 0.05)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
+
             // Set font and color for characters
             ctx.font = `${fontSize}px 'Space Mono', monospace`;
-            
+
             for (let i = 0; i < drops.length; i++) {
                 // Random character
                 const char = charArray[Math.floor(Math.random() * charArray.length)];
-                
+
                 // Gradient colors (green to cyan)
                 const gradient = ctx.createLinearGradient(0, drops[i], 0, drops[i] + fontSize);
                 gradient.addColorStop(0, "#00ff9d");
                 gradient.addColorStop(1, "#00eeff");
-                
+
                 ctx.fillStyle = gradient;
                 ctx.fillText(char, i * fontSize, drops[i]);
-                
+
                 // Move drop down
                 drops[i] += fontSize;
-                
+
                 // Reset drop if it goes beyond canvas
                 if (drops[i] > canvas.height && Math.random() > 0.975) {
                     drops[i] = 0;
                 }
             }
         }
-        
+
         // Animate matrix
         function animateMatrix() {
             drawMatrix();
             requestAnimationFrame(animateMatrix);
         }
-        
+
         animateMatrix();
-        
+
         // Form Submission (EmailJS)
         const contactForm = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
@@ -1356,7 +1436,7 @@
                         formMessage.className = 'form-message error';
                         formMessage.style.display = 'block';
                         // Try to open mail client; some browsers will block, so also show link
-                        try { window.open(mailto); } catch (e) {}
+                        try { window.open(mailto); } catch (e) { }
                         setTimeout(() => { formMessage.style.display = 'none'; }, 4000);
                         return;
                     }
@@ -1424,12 +1504,12 @@
             container.innerHTML = '';
 
             const items = [
-                {key: 'github', icon: 'fab fa-github', label: 'GitHub'},
-                {key: 'fb_profile', icon: 'fab fa-facebook', label: 'Facebook'},
-                {key: 'fb_page', icon: 'fab fa-facebook-f', label: 'Facebook Page'},
-                {key: 'instagram', icon: 'fab fa-instagram', label: 'Instagram'},
-                {key: 'whatsapp', icon: 'fab fa-whatsapp', label: 'WhatsApp'},
-                {key: 'telegram', icon: 'fab fa-telegram-plane', label: 'Telegram'}
+                { key: 'github', icon: 'fab fa-github', label: 'GitHub' },
+                { key: 'fb_profile', icon: 'fab fa-facebook', label: 'Facebook' },
+                { key: 'fb_page', icon: 'fab fa-facebook-f', label: 'Facebook Page' },
+                { key: 'instagram', icon: 'fab fa-instagram', label: 'Instagram' },
+                { key: 'whatsapp', icon: 'fab fa-whatsapp', label: 'WhatsApp' },
+                { key: 'telegram', icon: 'fab fa-telegram-plane', label: 'Telegram' }
             ];
 
             items.forEach(item => {
@@ -1467,16 +1547,16 @@
                     // re-render dynamic content when tools or courses are updated
                     loadDynamicContent();
                 }
-            } catch (e) {}
+            } catch (e) { }
         });
-        
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href === 'admin-login.html' || href === '#') return;
                 e.preventDefault();
-                
+
                 const targetId = href;
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
@@ -1590,10 +1670,10 @@
                                     if (btn.href !== '#') { btn.target = '_blank'; btn.rel = 'noopener noreferrer'; }
                                 } else if (btnCfg.type === 'internal' && btnCfg.target) {
                                     btn.href = btnCfg.target.startsWith('#') ? btnCfg.target : `#${btnCfg.target}`;
-                                    btn.addEventListener('click', function(ev) {
+                                    btn.addEventListener('click', function (ev) {
                                         ev.preventDefault();
                                         const tgt = document.querySelector(btn.getAttribute('href'));
-                                        if (tgt) tgt.scrollIntoView({behavior: 'smooth'});
+                                        if (tgt) tgt.scrollIntoView({ behavior: 'smooth' });
                                     });
                                 } else {
                                     btn.href = '#';
@@ -1601,7 +1681,7 @@
                                 card.appendChild(btn);
                                 setTimeout(() => btn.classList.remove('btn-pop'), 600);
                             }
-                        } catch (e) {}
+                        } catch (e) { }
 
                         toolsGrid.appendChild(card);
                     });
@@ -1678,10 +1758,10 @@
                                     if (a.href !== '#') { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
                                 } else if (btnCfg.type === 'internal' && btnCfg.target) {
                                     a.href = btnCfg.target.startsWith('#') ? btnCfg.target : `#${btnCfg.target}`;
-                                    a.addEventListener('click', function(ev) {
+                                    a.addEventListener('click', function (ev) {
                                         ev.preventDefault();
                                         const tgt = document.querySelector(a.getAttribute('href'));
-                                        if (tgt) tgt.scrollIntoView({behavior: 'smooth'});
+                                        if (tgt) tgt.scrollIntoView({ behavior: 'smooth' });
                                     });
                                 }
                                 a.classList.add('btn-pop');
@@ -1689,7 +1769,7 @@
                             } else {
                                 if (a) a.remove();
                             }
-                        } catch (e) {}
+                        } catch (e) { }
 
                         coursesGrid.appendChild(card);
                     });
@@ -1706,7 +1786,7 @@
             setTimeout(() => {
                 const activeBtn = document.querySelector('.tab-btn.active');
                 const tabId = activeBtn ? activeBtn.getAttribute('data-tab') : 'tools';
-                try { animateServiceCards(tabId); } catch (e) {}
+                try { animateServiceCards(tabId); } catch (e) { }
             }, 260);
         });
 
@@ -1714,19 +1794,19 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadDynamicContent();
         });
-        
+
         // Add typing effect to hero subtitle
         const heroSubtitle = document.querySelector('.hero-subtitle');
         const originalText = heroSubtitle.textContent.replace('|', '').trim();
         const cursor = document.querySelector('.terminal-cursor');
-        
+
         // Remove cursor from original text
         heroSubtitle.textContent = originalText;
-        
+
         function typeWriter(text, element, speed = 50) {
             let i = 0;
             element.textContent = "";
-            
+
             function type() {
                 if (i < text.length) {
                     element.textContent += text.charAt(i);
@@ -1737,10 +1817,10 @@
                     element.appendChild(cursor);
                 }
             }
-            
+
             type();
         }
-        
+
         // Start typing effect after page loads
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -1749,4 +1829,5 @@
         });
     </script>
 </body>
+
 </html>
